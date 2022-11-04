@@ -1,0 +1,51 @@
+// Abstracts
+@import './abstracts/variables';
+@import './abstracts/mixins';
+
+// Base
+@import './base/base';
+@import './base/animations';
+@import './base/typography';
+@import './base/utilities';
+
+// Components
+@import './components/button';
+@import './components/button-text';
+@import './components/composition';
+@import './components/adventure-card';
+@import './components/tour-card';
+@import './components/comment-card';
+@import './components/video-bg';
+@import './components/form';
+
+ // Layout
+@import './layout/header';
+@import './layout/grid';
+@import './layout/footer';
+@import './layout/navigation';
+
+// Pages
+@import './pages/home';
+
+.example {
+
+	// Скрывает обратную сторону элемента
+	backface-visibility: hidden;
+	
+	// Создаёт область отсечения: внутри неё контент видно, а вне её – нет
+	clip-path: polygon(0 0, 100% 12%, 100% 100%, 0 85%);
+	
+	// Устанавливает зону отображения background
+	background-clip: text;
+
+	// Устанавливает дефолтное отображение элементов (radio, checkbox, select etc.)
+	appearance: none;
+}
+
+
+
+
+
+
+
+ 

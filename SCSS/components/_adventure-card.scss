@@ -1,0 +1,20 @@
+.adventure-card {
+	text-align: center;
+	padding: 2.5rem;
+	background: rgba(255, 255, 255, 0.8);
+	border-radius: .5rem;
+	transition: all .45s;
+	&__icon {
+		@include gradient-color($gradient-LightDark);
+		font-size: 6.3rem;
+	}
+	&:hover {
+		transform: translateY(-.7rem);
+		@include respond(tab-land) {
+			transform: translateY(0);
+		}
+	}
+	@include respond(tab-land) {
+		margin-bottom: 3rem;
+	}
+}

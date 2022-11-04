@@ -1,0 +1,140 @@
+.navigation {
+	&__toggle {
+		display: none;
+		&:checked ~ .navigation__background {
+			transform: scale(150);
+		}
+		&:checked ~ .navigation__nav{
+			opacity: 1;
+			width: 100%;
+		}
+	}
+	&__button {
+		position: fixed;
+		cursor: pointer;
+		z-index: 200;
+		top: 10rem;
+		right: 10rem;
+		border-radius: 50%;
+		background: $color-white;
+		width: 7rem;
+		height: 7rem;
+		box-shadow: 0px 0px 34px -8px rgba(34, 60, 80, 0.2);
+		@include respond(phone) {
+			top: 8rem;
+			right: 8rem;
+		}
+	}
+	&__background {
+		width: 3rem;
+		height: 3rem;
+		position: fixed;
+		background: radial-gradient($color-brown-light, $color-brown-dark);
+		border-radius: 50%;
+		top: 12rem;
+		right: 12rem;
+		z-index: 100;
+		transition: all .75s;
+		@include respond(phone) {
+			top: 10rem;
+			right: 10rem;
+		}
+	}
+	&__nav {
+		opacity: 0;
+		width: 0%;
+		height: 100vh;
+		position: fixed;
+		top: 0;
+		right: 0;
+		z-index: 150;
+		transition: all .5s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+	}
+	&__list {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		list-style-type: none;
+		text-align: center;
+		width: 100%;
+	}
+	&__item {
+		&:not(:last-child) {
+			margin-bottom: 4rem;
+		}
+	}
+	&__link {
+		&:link,
+		&:visited {
+			display: inline-block;
+			color: $color-white;
+			text-decoration: none;
+			font-weight: 300;
+			font-size: 4rem;
+			line-height: 4.8rem;
+			letter-spacing: .5rem;
+			transition: all;
+			text-transform: uppercase;
+			background: linear-gradient(120deg, transparent 0%, transparent 50%, white 50%);
+			background-size: 250%;
+			background-repeat: no-repeat;
+			transition: all .5s;
+			padding: 1rem;
+
+			&:hover, &:active {
+				background-position: 100%;
+				color: $color-brown-dark;
+				transform: translateX(1rem);
+			}
+		}
+	}
+
+	&__icon {
+		position: relative;
+		margin-top: 3.4rem;
+    margin-left: 1.9rem;
+		&, &::before, &::after {
+			display: inline-block;
+			background: $color-black;
+			width: 3rem;
+			height: .2rem;
+			transition: all .2s;
+		}
+
+		&::before {
+			position: absolute;
+			content: '';
+			top: -.8rem;
+		}
+
+		&::after {
+			position: absolute;
+			content: '';
+			top: .8rem;
+		}
+	}
+
+	&__button:hover > &__icon::before {
+		top: -1rem
+	}
+
+	&__button:hover > &__icon::after {
+		top: 1rem;
+	}
+
+	&__toggle:checked + &__button > &__icon {
+		background: transparent;
+	}
+
+	&__toggle:checked + &__button > &__icon::before {
+		top: 0;
+		transform: rotate(135deg);
+	}
+
+	&__toggle:checked + &__button > &__icon::after {
+		top: 0;
+		transform: rotate(-135deg);
+	}
+}
+

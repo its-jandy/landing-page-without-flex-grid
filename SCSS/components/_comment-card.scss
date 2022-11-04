@@ -1,0 +1,91 @@
+.comment-card {
+	width: 75%;
+	background: rgba($color-white, 0.85);
+	box-shadow: $box-shadow;
+	margin: 0 auto;
+	padding: 4rem 10rem;
+	transform: skewX(-10deg);
+
+	@include respond(tab-port) {
+		transform: skewX(0);
+		padding: 5rem 3rem;
+		border-radius: 4px;
+	}
+
+	& > * {
+		transform: skewX(10deg);
+		@include respond(tab-port) {
+			transform: skewX(0);
+		}
+	}
+
+	&__title {
+		margin-bottom: 1rem;
+		@include respond(tab-port) {
+			text-align: center;
+			margin-bottom: 2rem;
+		}
+	}
+
+	&__box > .paragraph {
+		@include respond(tab-port) {
+			text-align: justify;
+			word-break: break-all;
+		}
+	}
+
+	&__img {
+		overflow: hidden;
+		position: relative;
+		height: 15rem;
+		width: 15rem;
+		float: left;
+		border-radius: 50%;
+		shape-outside: circle(50% at 50% 50%);
+		margin-right: 4rem;
+		@include respond(tab-port) {
+			float: none;
+			display: block;
+			margin: 0 auto;
+			margin-bottom: 3rem;
+		}
+		& > img {
+			transform: scale(1.2);
+			border-radius: 50%;
+			height: 100%;
+			transition: all .5s;
+		}
+	}
+
+	
+
+	&__full-name {
+		z-index: 99;
+		opacity: 0;
+		color: $color-white;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -20%);
+		text-align: center;
+		font-size: 2rem;
+		line-height: 2.9rem;
+		letter-spacing: .2rem;
+		text-transform: uppercase;
+		transition: all .5s;
+	}
+
+	&__box {
+		margin-left: 1.5rem;
+	}
+
+	&:hover &__full-name {
+		transform: translate(-50%, -50%);
+		opacity: 1;
+	}
+
+	&:hover &__img > img {
+		filter: blur(3px) brightness(50%);
+		transform: scale(1);
+	}
+}

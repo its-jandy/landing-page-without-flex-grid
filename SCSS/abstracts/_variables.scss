@@ -1,0 +1,31 @@
+// Colors
+$color-brown-light: #ba8554;
+$color-brown-dark: #a14f03;
+$color-grey: #777;
+$color-white: #fff;
+$color-black: #000;
+
+// Gradients
+$gradient-LightBlack: linear-gradient(
+	90deg,
+	rgba($color-brown-light, 0.7) 0.03%,
+	rgba($color-black, 0.7) 99.94%
+);
+$gradient-LightDark: linear-gradient(
+	90deg,
+	rgba($color-brown-light, 0.7) 0.03%,
+	rgba($color-brown-dark, 0.7) 99.94%
+);
+
+// Shadows
+$box-shadow: 0px .4rem .4rem rgba(0, 0, 0, 0.2);
+$h2-shadow: 0rem .4rem .4rem rgba(0, 0, 0, 0.25);
+
+// Margins
+$margin-vertical-big: 8rem;
+$gutter-horizontal: 6rem;
+
+// Typography
+$font-size-paragraph: 1.6rem;
+$font-size-h2: 3.6rem;
+$font-size-h3: 2rem;

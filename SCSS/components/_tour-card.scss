@@ -1,0 +1,159 @@
+.tour-card {
+	position: relative;
+	height: 52rem;
+	perspective: 150rem;
+
+	@include respond(tab-port) {
+		height: unset;
+		perspective: unset;
+	}
+	&__side {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		transition: all ease-out 0.5s;
+		backface-visibility: hidden;
+		box-shadow: $box-shadow;
+		@include respond(tab-port) {
+			position: static;
+		}
+		&_back {
+			position: relative;
+			background: linear-gradient(
+				156deg,
+				rgba($color-brown-light, 0.7) 0.03%,
+				rgba($color-brown-dark, 0.7) 99.94%
+			);
+			transform: rotateY(180deg);
+			@include respond(tab-port) {
+				transform: rotateY(0);
+				height: 32rem;
+			}
+		}
+		&_front {
+			@include respond(tab-port) {
+				padding-bottom: 3rem;
+			}
+		}
+	}
+
+	&:hover &__side_front {
+		transform: rotateY(-180deg);
+		@include respond(tab-port) {
+			transform: rotateY(0);
+		}
+	}
+
+	&:hover &__side_back {
+		transform: rotateY(0deg);
+		@include respond(tab-port) {
+			transform: rotateY(0);
+		}
+	}
+
+	&__img {
+		height: 22rem;
+		background-blend-mode: hard-light;
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+		&_1 {
+			background: $color-brown-light url('../img/tour-card-1.jpg') 0 75% /
+				cover no-repeat;
+		}
+		&_2 {
+			background: $color-brown-light url('../img/tour-card-2.jpg') center /
+				cover no-repeat;
+		}
+		&_3 {
+			background: $color-brown-light url('../img/tour-card-3.jpg') center /
+				cover no-repeat;
+		}
+
+		@include respond(tab-land) {
+			height: 24rem;
+		}
+	}
+
+	&__title {
+		position: absolute;
+		top: 18.5rem;
+		right: 0;
+		letter-spacing: 0.2rem;
+		text-align: right;
+		text-transform: uppercase;
+		font-size: 2.8rem;
+		font-weight: 200;
+		color: $color-white;
+
+		@include respond(tab-port) {
+			font-size: 3.7rem;
+		}
+	}
+
+	&__span {
+		padding: 1.1rem 1.9rem;
+		background: linear-gradient(90deg, $color-brown-light, $color-brown-dark);
+		&_1 {
+			padding-bottom: 0.3rem;
+		}
+		&_2 {
+			position: absolute;
+			right: 0;
+			top: 3.4rem;
+			padding-top: 0.3rem;
+			@include respond(tab-port) {
+				top: 4rem;
+			}
+		}
+	}
+
+	ul {
+		margin-top: 8rem;
+		text-align: center;
+		list-style-type: none;
+		li {
+			font-weight: 500;
+			font-size: $font-size-paragraph;
+			line-height: 1.9rem;
+			letter-spacing: 0.2rem;
+			text-decoration-line: underline;
+			color: $color-grey;
+		}
+		:not(:last-child) {
+			margin-bottom: 2rem;
+		}
+		@include respond(tab-land) {
+			margin-top: 7rem;
+		}
+	}
+
+	&__box {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	&__text {
+		text-transform: uppercase;
+		font-weight: 300;
+		text-align: center;
+		letter-spacing: 0.2rem;
+		color: $color-white;
+		&:not(:last-child) {
+			margin-bottom: 8.7rem;
+			@include respond(tab-port) {
+				margin-bottom: 3rem;
+			}
+		}
+		&_title {
+			font-size: $font-size-paragraph;
+			font-weight: 300;
+		}
+		&_price {
+			font-weight: 500;
+			font-size: 6rem;
+		}
+	}
+}
