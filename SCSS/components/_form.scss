@@ -28,6 +28,9 @@
 			transform: none;
 			text-shadow: none;
 		}
+		@include respond(phone) {
+			word-break: break-all;
+		}
 	}
 
 	&__group:not(:last-child) {
